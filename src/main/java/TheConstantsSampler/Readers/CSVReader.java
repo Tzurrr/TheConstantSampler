@@ -36,6 +36,9 @@ public class CSVReader implements Reader{
         ArrayList<ReportData> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;
+
+            //to skip the first line with the properties
+            br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(COMMA_DELIMITER);
                 records.add(sampleConst(values));
