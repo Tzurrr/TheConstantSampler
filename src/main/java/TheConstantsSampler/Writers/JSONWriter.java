@@ -15,7 +15,7 @@ public class JSONWriter {
     private File path = new File("D:\\Code\\TheConstantSampler\\src\\main\\resources\\mada_reports\\report_n" + this.counter + ".json");
 
     public void write(ArrayList<ReportData> data) throws IOException {
-        int inter_counter = 0;
+        int inner_counter = 0;
 
         if(data.size() > 50000){
             int split_to = mon.split(data.size());
@@ -23,14 +23,14 @@ public class JSONWriter {
 
             for (int i = 0; i <split_to; i++) {
 
-                while (inter_counter < 50000){
-                    temp.add(data.get(inter_counter));
-                    inter_counter++;
+                while (inner_counter < 50000){
+                    temp.add(data.get(inner_counter));
+                    inner_counter++;
                 }
                 objectMapper.writeValue(this.path, temp);
                 this.counter++;
                 this.path = new File("D:\\Code\\TheConstantSampler\\src\\main\\resources\\mada_reports\\report_n" + this.counter + ".json");
-                inter_counter = 0;
+                inner_counter = 0;
             }
         }
 
