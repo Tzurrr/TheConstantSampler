@@ -60,4 +60,60 @@ public class TestData {
     public void setJOIN_DATE(String JOIN_DATE) {
         this.JOIN_DATE = JOIN_DATE;
     }
+
+    public String getResultDate() {
+        return ResultDate;
+    }
+
+    public String getLastName() {
+        return LastName;
+    }
+
+    public String getIDNum() {
+        return IDNum;
+    }
+
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public int getIDType() {
+        return IDType;
+    }
+
+    public int getResultTestCorona() {
+        return ResultTestCorona;
+    }
+
+    public String getBirthDate() {
+        return BirthDate;
+    }
+
+    public String getHEALTH_CARD_ID() {
+        return HEALTH_CARD_ID;
+    }
+
+    public String getHEALTH_CARD_NAME() {
+        return HEALTH_CARD_NAME;
+    }
+
+    public String getJOIN_DATE() {
+        return JOIN_DATE;
+    }
+
+    public String getLabcode() {
+        return Labcode;
+    }
+
+    public String getStickerNumber() {
+        return StickerNumber;
+    }
+
+    public String getTestType() {
+        return TestType;
+    }
+
+    public String getVariant() {
+        return Variant;
+    }
 }
