@@ -15,7 +15,7 @@ public class CSVReader implements Reader{
         this.path = path;
     }
 
-    public ReportData sampleConst(String[] data){
+    private ReportData sampleConst(String[] data){
         String MDACODE = data[0];
         String IDNum = data[1];
         String IDType = data[2];
