@@ -1,32 +1,47 @@
 package TheConstantsSampler.LabTests;
-
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import health_care_provider.models.PersonInsured;
-
-import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 
-//@XmlRootElement(name = "labTests")
-//public class TestData {
-public class labTests {
-    @JacksonXmlElementWrapper(localName = "list")
+
+@JacksonXmlRootElement(localName = "labTests")
+public class TestData {
+
+    //@JacksonXmlProperty
     private int IDNum;
+    //@JacksonXmlProperty
     private int IDType;
+    //@JacksonXmlProperty
     private String FirstName;
+    //@JacksonXmlProperty
     private String LastName;
+    //@JacksonXmlProperty
     private String ResultDate;
+    //@JacksonXmlProperty
     private String BirthDate;
+    //@JacksonXmlProperty
     private String Labcode;
+    //@JacksonXmlProperty
     private String StickerNumber;
+    //@JacksonXmlProperty
     private int ResultTestCorona;
+    //@JacksonXmlProperty
     private String Variant;
+    //@JacksonXmlProperty
     private String TestType;
 
+    //@JacksonXmlProperty
     private LocalDate JOIN_DATE;
+    //@JacksonXmlProperty
     private int HEALTH_CARD_ID;
+    //@JacksonXmlProperty
     private String HEALTH_CARD_NAME;
 
-    public labTests(int IDNum, int IDType, String FirstName, String LastName, String ResultDate, String BirthDate, String Labcode, String StickerNumber, int ResultTestCorona, String Variant, String TestType){
+    //@JacksonXmlProperty
+    private boolean invalid;
+
+    public TestData(int IDNum, int IDType, String FirstName, String LastName, String ResultDate, String BirthDate, String Labcode, String StickerNumber, int ResultTestCorona, String Variant, String TestType){
         this.IDNum = IDNum;
         this.IDType = IDType;
         this.FirstName = FirstName;
@@ -40,7 +55,7 @@ public class labTests {
         this.TestType = TestType;
     }
 
-    public labTests(int IDNum, int IDType, String FirstName, String LastName, String ResultDate, String BirthDate, String Labcode, String StickerNumber, int ResultTestCorona, String Variant, String TestType, LocalDate JOIN_DATE, int HEALTH_CARD_ID, String HEALTH_CARD_NAME){
+    public TestData(int IDNum, int IDType, String FirstName, String LastName, String ResultDate, String BirthDate, String Labcode, String StickerNumber, int ResultTestCorona, String Variant, String TestType, LocalDate JOIN_DATE, int HEALTH_CARD_ID, String HEALTH_CARD_NAME){
         this.IDNum = IDNum;
         this.IDType = IDType;
         this.FirstName = FirstName;
@@ -56,9 +71,14 @@ public class labTests {
         this.JOIN_DATE = JOIN_DATE;
         this.HEALTH_CARD_ID = HEALTH_CARD_ID;
         this.HEALTH_CARD_NAME = HEALTH_CARD_NAME;
+
     }
 
-    public labTests(labTests a, PersonInsured b){
+    public void setInvalid(boolean isInvalid){
+        this.invalid = isInvalid;
+    }
+
+    public TestData(TestData a, PersonInsured b){
         this.IDNum = a.getIDNum();
         this.IDType = a.getIDType();
         this.FirstName = a.getFirstName();
@@ -143,4 +163,5 @@ public class labTests {
     public String getVariant() {
         return Variant;
     }
+
 }
