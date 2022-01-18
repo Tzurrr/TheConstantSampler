@@ -1,11 +1,15 @@
 package TheConstantsSampler.LabTests;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import health_care_provider.models.PersonInsured;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
-import java.util.spi.LocaleNameProvider;
 
-public class TestData {
+//@XmlRootElement(name = "labTests")
+//public class TestData {
+public class labTests {
+    @JacksonXmlElementWrapper(localName = "list")
     private int IDNum;
     private int IDType;
     private String FirstName;
@@ -22,7 +26,7 @@ public class TestData {
     private int HEALTH_CARD_ID;
     private String HEALTH_CARD_NAME;
 
-    public TestData(int IDNum, int IDType, String FirstName, String LastName, String ResultDate, String BirthDate, String Labcode, String StickerNumber, int ResultTestCorona, String Variant, String TestType){
+    public labTests(int IDNum, int IDType, String FirstName, String LastName, String ResultDate, String BirthDate, String Labcode, String StickerNumber, int ResultTestCorona, String Variant, String TestType){
         this.IDNum = IDNum;
         this.IDType = IDType;
         this.FirstName = FirstName;
@@ -36,7 +40,7 @@ public class TestData {
         this.TestType = TestType;
     }
 
-    public TestData(int IDNum, int IDType, String FirstName, String LastName, String ResultDate, String BirthDate, String Labcode, String StickerNumber, int ResultTestCorona, String Variant, String TestType, LocalDate JOIN_DATE, int HEALTH_CARD_ID, String HEALTH_CARD_NAME){
+    public labTests(int IDNum, int IDType, String FirstName, String LastName, String ResultDate, String BirthDate, String Labcode, String StickerNumber, int ResultTestCorona, String Variant, String TestType, LocalDate JOIN_DATE, int HEALTH_CARD_ID, String HEALTH_CARD_NAME){
         this.IDNum = IDNum;
         this.IDType = IDType;
         this.FirstName = FirstName;
@@ -54,7 +58,7 @@ public class TestData {
         this.HEALTH_CARD_NAME = HEALTH_CARD_NAME;
     }
 
-    public TestData(TestData a, PersonInsured b){
+    public labTests(labTests a, PersonInsured b){
         this.IDNum = a.getIDNum();
         this.IDType = a.getIDType();
         this.FirstName = a.getFirstName();
