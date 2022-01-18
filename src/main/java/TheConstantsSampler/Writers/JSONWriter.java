@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class JSONWriter {
+public class JSONWriter implements Writer{
     private ObjectMapper objectMapper = new ObjectMapper();
     private int counter = 0;
     private CSVMonitor mon = new CSVMonitor();
