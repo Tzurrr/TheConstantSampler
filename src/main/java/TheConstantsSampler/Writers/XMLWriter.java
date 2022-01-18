@@ -24,24 +24,25 @@ public class XMLWriter implements Writer{
     public void write(List<TestData> testsData) throws IOException {
         xmlMapper.findAndRegisterModules();
         int inner_counter = 0;
-        TestData[] temp = new TestData[testsData.size()];
+        //TestData[] temp = new TestData[testsData.size()];
 
         if(testsData.size() > 50000){
             int split_to = mon.split(testsData.size());
-            //ArrayList<TestData> temp = new ArrayList<TestData>();
+            ArrayList<TestData> temp = new ArrayList<TestData>();
 
             for (int i = 0; i <split_to; i++) {
 
                 while (inner_counter < 50000){
-                    //temp[inner_counter] = testsData.get(0);
-                    inner_counter++;
+                    temp.add(testsData.get(0));
                     testsData.remove(0);
+                    inner_counter++;
                 }
                 xmlMapper.writeValue(this.path, temp);
                 this.counter++;
                 this.path = new File("D:\\Code\\TheConstantSampler\\src\\main\\resources\\LABTESTS\\labtest_n" + this.counter + ".XML");
                 inner_counter = 0;
-                temp = new TestData[testsData.size()];
+                temp = new ArrayList<TestData>();
+                //temp = new TestData[testsData.size()];
             }
         }
         else {
