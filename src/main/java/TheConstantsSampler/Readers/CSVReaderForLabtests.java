@@ -16,7 +16,7 @@ public class CSVReaderForLabtests implements Reader{
     }
 
     private TestData labtestConst(String[] data){
-        String IDNum = data[0];
+        int IDNum = Integer.parseInt(data[0]);
         int IDType = Integer.parseInt(data[1]);
         String FirstName = data[2];
         String LastName = data[3];
