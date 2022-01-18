@@ -3,6 +3,7 @@ package TheConstantsSampler.LabTests;
 import TheConstantsSampler.Enrichment.CSVLabtestEnricher;
 import TheConstantsSampler.Readers.CSVReaderForLabtests;
 import TheConstantsSampler.Writers.XMLWriter;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import health_care_provider.errors.InvalidIdException;
 
 import java.io.IOException;
