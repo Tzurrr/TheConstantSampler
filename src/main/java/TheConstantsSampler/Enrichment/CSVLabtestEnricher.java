@@ -9,10 +9,11 @@ public class CSVLabtestEnricher implements Enricher{
     HealthCareInfoProvider healthCareInfoProvider = new HealthCareInfoProvider();
     public PersonInsured enrich(int IDNum, int IDType) throws InvalidIdException {
         //if (IDType != 0 || IDNum > 99999999 && IDNum < 1000000000) {
+        try {
             return healthCareInfoProvider.fetchInfo(IDNum, IDType);
-        //}
-        //else {
-          //  return null;
-        //}
+        }catch (Exception ex){
+            System.out.println("invalid ID");
+        }
+        return null;
     }
 }
