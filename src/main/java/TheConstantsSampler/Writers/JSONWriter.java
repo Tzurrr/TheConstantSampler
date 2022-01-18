@@ -24,11 +24,13 @@ public class JSONWriter implements Writer{
             for (int i = 0; i <split_to; i++) {
 
                 while (inner_counter < 50000){
-                    temp.add(data.get(inner_counter));
+                    temp.add(data.get(0));
+                    data.remove(0);
                     inner_counter++;
                 }
                 objectMapper.writeValue(this.path, temp);
                 this.counter++;
+                temp = new ArrayList<ReportData>();
                 this.path = new File("D:\\Code\\TheConstantSampler\\src\\main\\resources\\mada_reports\\report_n" + this.counter + ".json");
                 inner_counter = 0;
             }
